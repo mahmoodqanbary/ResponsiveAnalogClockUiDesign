@@ -44,11 +44,39 @@
 }
 
 /*========== Variables Dark theme ==========*/
+body.dark-theme{
+    --title-color: hsl(var(--hue-color), 12%, 95%);
+    --text-color: hsl(var(--hue-color), 12%, 75%);
+    --body-color: hsl(var(--hue-color), 10%, 16%);
+}
 
 /*========== Button Dark/Light ==========*/
+.clock__theme{
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    display: flex;
+    padding: .25rem;
+    border-radius: 50%;
+    box-shadow: inset -1px -1px 1px hsla(var(--hue-color), 0%, 100%, 1), 
+                inset 1px 1px 1px hsla(var(--hue-color), 30%, 86%, 1);
+    color: var(--first-color);
+    cursor: pointer;
+
+}
 
 /*========== Box shadow Dark theme ==========*/
-
+.dark-theme .clock__circle {
+    box-shadow: 6px 6px 16px hsla(var(--hue-color), 8%, 12%, 1), 
+                -6px -6px 16px hsla(var(--hue-color), 8%, 20%, 1), 
+                inset -6px -6px 16px hsla(var(--hue-color), 8%, 20%, 1), 
+                inset 6px 6px 12px hsla(var(--hue-color), 8%, 12%, 1);
+  }
+  
+  .dark-theme .clock__theme {
+    box-shadow: inset -1px -1px 1px hsla(var(--hue-color), 8%, 20%, 1), 
+                inset 1px 1px 1px hsla(var(--hue-color), 8%, 12%, 1);
+  }
 /*=============== BASE ===============*/
 *{
     box-sizing: border-box;
@@ -222,5 +250,29 @@ a{
     color: var(--title-color);
 }
 
+.clock__text-ampm{
+    font-size: var(--tiny-font-size);
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    margin-left: var(--mb-0-25);
+}
+
+.clock__date{
+    text-align: center;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+}
+
 
 /*=============== MEDIA QUERIES ===============*/
+
+/* For large device */
+@media screen and (min-width: 968px) {
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .clock__logo{
+        margin-bottom: 3rem;
+    }
+}
